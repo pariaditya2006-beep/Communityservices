@@ -1,0 +1,72 @@
+/* Basic page style */
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f6f5;
+  color: #1b2b2c;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 { color: #0f3d3e; margin-bottom: 4px; }
+h2 { color: #0f3d3e; margin-top: 0; }
+.note { color: #5c6b73; }
+
+/* Cards */
+.box {
+  background: white;
+  border: 1px solid #cfdcd9;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 14px;
+}
+
+/* Buttons */
+button {
+  padding: 8px 14px;
+  margin: 4px 4px 4px 0;
+  border: 1px solid #1a7f7a;
+  background: white;
+  color: #1a7f7a;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+}
+button.main { background: #1a7f7a; color: white; }
+button.danger { border-color: #b3341a; color: #b3341a; }
+.tabs button { font-weight: bold; }
+
+input[type="text"] {
+  padding: 8px;
+  font-size: 15px;
+  border: 1px solid #cfdcd9;
+  border-radius: 6px;
+  width: 240px;
+}
+
+.candidate { display: block; border: 1px solid #cfdcd9; border-radius: 6px; padding: 8px; margin: 6px 0; }
+
+.msg { font-weight: bold; }
+.good { color: #16794a; }
+.bad { color: #b3341a; }
+
+.slip { border: 2px dashed #5c6b73; padding: 10px; margin-top: 10px; background: #fafafa; }
+
+/* Node circles */
+.node {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: #1a7f7a;
+  color: white;
+  padding: 0;
+}
+.node.off { background: white; color: #999; border: 2px dashed #999; }
+
+/* Ledger blocks */
+.block { border-top: 1px solid #cfdcd9; padding: 8px 0; font-size: 14px; word-break: break-all; }
+.block.tampered { color: #b3341a; font-weight: bold; }
+
+/* Result bars */
+.bar { background: #1a7f7a; color: white; padding: 4px 8px; border-radius: 4px; margin: 4px 0 10px 0; }
+
+.hidden { display: none; }

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Verifiable Voting Demo</title>
+
+  <!-- CONNECTION 1: this line connects the CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Verifiable Voting Demo</h1>
+  <p class="note">Team Youth for Change | KR Mangalam University</p>
+
+  <!-- Tab buttons -->
+  <div class="tabs">
+    <button onclick="showTab('voter')">Voter</button>
+    <button onclick="showTab('officials')">Officials</button>
+    <button onclick="showTab('auditor')">Auditor</button>
+  </div>
+
+  <!-- VOTER TAB -->
+  <div id="voter" class="tab">
+    <div class="box">
+      <h2>Cast your vote</h2>
+      <p class="note">Demo voter IDs: VOTER001 to VOTER005 (each can vote once)</p>
+      <input id="voterId" type="text" placeholder="Enter Voter ID">
+      <div id="candidates"></div>
+      <button class="main" onclick="castVote()">Cast vote</button>
+      <p id="voteMsg" class="msg"></p>
+      <div id="slip"></div>
+    </div>
+    <div class="box">
+      <h2>Check your receipt</h2>
+      <input id="receiptCode" type="text" placeholder="Receipt code">
+      <button onclick="checkReceipt()">Check on ledger</button>
+      <p id="receiptMsg" class="msg"></p>
+    </div>
+  </div>
+
+  <!-- OFFICIALS TAB -->
+  <div id="officials" class="tab hidden">
+    <div class="box">
+      <h2>Live status</h2>
+      <p>Votes cast: <b id="totalVotes">0</b> | Nodes online: <b id="nodesOnline">5</b>/5</p>
+      <p class="note">Click a node to turn it off or on. We need at least 3 nodes online.</p>
+      <div id="nodes"></div>
+    </div>
+    <div class="box">
+      <h2>Results</h2>
+      <p id="resultNote" class="note">Votes stay locked until the election is closed.</p>
+      <div id="results"></div>
+      <button class="main" onclick="closeElection()">Close election</button>
+    </div>
+    <div class="box">
+      <h2>Ledger (blockchain)</h2>
+      <div id="ledger">No blocks yet.</div>
+    </div>
+  </div>
+
+  <!-- AUDITOR TAB -->
+  <div id="auditor" class="tab hidden">
+    <div class="box">
+      <h2>Audit tools</h2>
+      <button class="main" onclick="verifyChain()">Verify the chain</button>
+      <button class="danger" onclick="simulateAttack()">Simulate an attack</button>
+      <button onclick="checkPaperSlips()">Check paper slips</button>
+      <button onclick="resetDemo()">Reset demo</button>
+      <p id="auditMsg" class="msg"></p>
+    </div>
+    <div class="box">
+      <h2>About this demo</h2>
+      <p>Hashing uses real SHA-256. Blind signatures, DHT, IPFS and Ethereum are simulated.</p>
+    </div>
+  </div>
+
+  <!-- CONNECTION 2: this line connects the JavaScript file (keep it at the end) -->
+  <script src="script.js"></script>
+</body>
+</html>
